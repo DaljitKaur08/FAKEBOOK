@@ -1,0 +1,295 @@
+@charset "utf-8";
+@import "./reset.css";
+
+/* ================= GLOBAL ================= */
+body {
+    background-color: #0f1117;
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+.flex { display: flex; align-items: center; }
+.flex-between { justify-content: space-between; }
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+/* ================= HEADER ================= */
+header {
+    background-color: #11131a;
+    padding: 18px 0;
+    border-bottom: 1px solid #222;
+}
+
+header h1 {
+    color: #1d6bff;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d5d5d5;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #1d6bff;
+}
+
+.profile-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+/* ================= POST FORM ================= */
+.post-form {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.post-form form {
+    background-color: #20232b;
+    width: 820px;
+    max-width: 100%;
+    padding: 24px 28px;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    resize: none;
+    padding: 14px;
+    color: white;
+    background-color: #2b2f38;
+    border: 1px solid #3a3f49;
+    border-radius: 8px;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.upload-label {
+    padding: 8px 10px;
+    background-color: #2b2f38;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.upload-label i {
+    font-size: 20px;
+    color: white;
+}
+
+#postImage {
+    display: none;
+}
+
+.post-btn {
+    background-color: #1d6bff;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* ================= POSTS ================= */
+.posts {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.post-card {
+    width: 100%;
+    max-width: 700px;
+    background-color: #20232b;
+    padding: 20px 22px;
+    border-radius: 10px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-user-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: min(90%, 350px);
+    background-color: #20232b;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-size: 28px;
+    background: none;
+    color: white;
+}
+
+.modal-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+/* ================================================================== */
+/* ========================= RESPONSIVE ============================= */
+/* ================================================================== */
+
+
+/* =========== LARGE TABLETS (width ≤ 900px) =========== */
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .post-form form {
+        width: 95%;
+        padding: 20px;
+    }
+
+    textarea {
+        height: 160px;
+    }
+}
+
+/* =========== SMALL TABLETS + LARGE PHONES (≤ 768px) =========== */
+@media (max-width: 768px) {
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .profile-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post-form form {
+        padding: 18px;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+}
+
+/* =========== PHONES (≤ 600px) =========== */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .post-form form {
+        padding: 16px;
+    }
+
+    textarea {
+        height: 140px;
+        font-size: 15px;
+    }
+
+    .post-btn {
+        padding: 6px 14px;
+    }
+
+    .upload-label i {
+        font-size: 18px;
+    }
+
+    .post-card {
+        padding: 16px;
+    }
+
+    .modal-content {
+        padding: 16px;
+    }
+}
+
+/* =========== VERY SMALL PHONES (≤ 420px) =========== */
+@media (max-width: 420px) {
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    .form-actions {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .post-card {
+        padding: 14px;
+    }
+}

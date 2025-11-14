@@ -1,6 +1,7 @@
 "use strict";
 
-class User {
+export default class User {
+
     #id;
     #name;
     #userName;
@@ -23,8 +24,7 @@ class User {
 ID: ${this.#id}
 Name: ${this.#name}
 Username: ${this.#userName}
-Email: ${this.#email}`;
+Email: ${this.#email}
+`;
     }
 }
-
-export default User;

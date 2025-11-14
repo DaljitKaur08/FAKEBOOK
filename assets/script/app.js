@@ -1,8 +1,4 @@
-"use strict";
-
-/* =========================================================
-   USER CLASS (PARENT)
-   ========================================================= */
+'use strict'
 class User {
     #id;
     #name;
@@ -31,19 +27,13 @@ class User {
     }
 }
 
-/* =========================================================
-   SUBSCRIBER CLASS (CHILD)
-   Inherits User
-   ========================================================= */
 class Subscriber extends User {
-
     #pages;
     #groups;
     #canMonetize;
 
     constructor(id, name, userName, email, pages, groups, canMonetize) {
         super(id, name, userName, email);
-
         this.#pages = pages;
         this.#groups = groups;
         this.#canMonetize = canMonetize;
@@ -54,112 +44,26 @@ class Subscriber extends User {
     get canMonetize() { return this.#canMonetize; }
 
     getInfo() {
+        const base = super.getInfo();
         return {
-            ...super.getInfo(),
+            ...base,
             pages: this.#pages,
             groups: this.#groups,
             canMonetize: this.#canMonetize
         };
     }
 }
-
-/* =========================================================
-   CREATE ONE SUBSCRIBER OBJECT (MANUAL DATA)
-   ========================================================= */
 const currentUser = new Subscriber(
     101,
     "Daljit Kaur",
     "daljit_kaur",
-    "daljit@example.com",
-    ["TravelPage", "FoodiesClub"],
-    ["WomenInTech", "Developers Group"],
+    "saini26daljit@gmail.com",
+    ["Food Lovers", "Winnipeg News"],
+    ["MITT Students", "Developers Group"],
     true
 );
-
-/* =========================================================
-   DOM ELEMENTS
-   ========================================================= */
-const postForm = document.querySelector("#postForm");
-const postContent = document.querySelector("#postContent");
-const postImageInput = document.querySelector("#postImage");
-const postsContainer = document.querySelector(".posts");
-const template = document.querySelector("#post-template");
-
-/* Modal */
-const modal = document.querySelector("#user-modal");
-const openModalBtn = document.querySelector("#open-user-modal");
-const closeModalBtn = document.querySelector(".close");
-
-/* =========================================================
-   SHOW USER INFO IN MODAL
-   ========================================================= */
-openModalBtn.addEventListener("click", () => {
-    const info = currentUser.getInfo();
-
-    document.querySelector("#info-id").textContent = `ID: ${info.id}`;
-    document.querySelector("#info-name").textContent = `Name: ${info.name}`;
-    document.querySelector("#info-username").textContent = `Username: ${info.userName}`;
-    document.querySelector("#info-email").textContent = `Email: ${info.email}`;
-    document.querySelector("#info-pages").textContent = `Pages: ${info.pages.join(", ")}`;
-    document.querySelector("#info-groups").textContent = `Groups: ${info.groups.join(", ")}`;
-    document.querySelector("#info-monetize").textContent = `Can Monetize: ${info.canMonetize}`;
-
-    modal.style.display = "flex";
-});
-
-/* Close Modal */
-closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-/* Clicking outside closes modal */
-window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-});
-
-/* =========================================================
-   POST SUBMISSION
-   ========================================================= */
-postForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const text = postContent.value.trim();
-    const imageFile = postImageInput.files[0];
-
-    if (!text && !imageFile) {
-        alert("Please write something or select an image!");
-        return;
-    }
-
-    const clone = template.content.cloneNode(true);
-
-    /* User information */
-    clone.querySelector(".post-name").textContent = currentUser.name;
-
-    /* Date */
-    const date = new Date();
-    clone.querySelector(".post-date").textContent =
-        date.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
-
-    /* Post text */
-    clone.querySelector(".post-text").textContent = text;
-
-    /* Image handling */
-    if (imageFile) {
-        const imgTag = clone.querySelector(".post-image");
-        imgTag.style.display = "block";
-
-        const reader = new FileReader();
-        reader.onload = () => {
-            imgTag.src = reader.result;
-        };
-        reader.readAsDataURL(imageFile);
-    }
-
-    /* Add the post */
-    postsContainer.prepend(clone);
-
-    /* Reset form */
-    postContent.value = "";
-    postImageInput.value = "";
-});
+const postForm = document.getElementById("postForm");
+const postContent = document.getElementById("postContent");
+const postImage = document.getElementById("postImage");
+const postsSection = document.querySelector(".posts");
+const template = document.getElementById("post-template");

@@ -184,12 +184,10 @@ textarea {
     margin: 10px auto;
 }
 
-/* ================================================================== */
-/* ========================= RESPONSIVE ============================= */
-/* ================================================================== */
 
 
-/* =========== LARGE TABLETS (width ≤ 900px) =========== */
+
+
 @media (max-width: 900px) {
     header h1 {
         font-size: 24px;
@@ -209,7 +207,7 @@ textarea {
     }
 }
 
-/* =========== SMALL TABLETS + LARGE PHONES (≤ 768px) =========== */
+
 @media (max-width: 768px) {
 
     nav {
@@ -236,7 +234,7 @@ textarea {
     }
 }
 
-/* =========== PHONES (≤ 600px) =========== */
+
 @media (max-width: 600px) {
 
     header h1 {
@@ -269,7 +267,7 @@ textarea {
     }
 }
 
-/* =========== VERY SMALL PHONES (≤ 420px) =========== */
+
 @media (max-width: 420px) {
 
     header h1 {

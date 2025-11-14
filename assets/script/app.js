@@ -1,13 +1,8 @@
-// ===========================================================
-//                 ONE SINGLE FILE (index.js)
-//       Contains: User Class + Subscriber Class + App Logic
-// ===========================================================
+"use strict";
 
-
-// ==========================
-//       USER CLASS
-// ==========================
-
+/* =========================================================
+   USER CLASS (PARENT)
+   ========================================================= */
 class User {
     #id;
     #name;
@@ -30,24 +25,25 @@ class User {
         return {
             id: this.#id,
             name: this.#name,
-            username: this.#userName,
+            userName: this.#userName,
             email: this.#email
         };
     }
 }
 
-
-// ==========================
-//     SUBSCRIBER CLASS
-// ==========================
-
+/* =========================================================
+   SUBSCRIBER CLASS (CHILD)
+   Inherits User
+   ========================================================= */
 class Subscriber extends User {
+
     #pages;
     #groups;
     #canMonetize;
 
     constructor(id, name, userName, email, pages, groups, canMonetize) {
         super(id, name, userName, email);
+
         this.#pages = pages;
         this.#groups = groups;
         this.#canMonetize = canMonetize;
@@ -62,135 +58,108 @@ class Subscriber extends User {
             ...super.getInfo(),
             pages: this.#pages,
             groups: this.#groups,
-            monetization: this.#canMonetize
+            canMonetize: this.#canMonetize
         };
     }
 }
 
-
-
-// ===========================================================
-//                CREATE SUBSCRIBER (Assignment Requirement)
-// ===========================================================
-
-const myUser = new Subscriber(
+/* =========================================================
+   CREATE ONE SUBSCRIBER OBJECT (MANUAL DATA)
+   ========================================================= */
+const currentUser = new Subscriber(
     101,
     "Daljit Kaur",
-    "daljit123",
+    "daljit_kaur",
     "daljit@example.com",
-    ["Cooking Page", "Fitness Tips"],
-    ["Web Dev Group", "Student Circle"],
+    ["TravelPage", "FoodiesClub"],
+    ["WomenInTech", "Developers Group"],
     true
 );
 
+/* =========================================================
+   DOM ELEMENTS
+   ========================================================= */
+const postForm = document.querySelector("#postForm");
+const postContent = document.querySelector("#postContent");
+const postImageInput = document.querySelector("#postImage");
+const postsContainer = document.querySelector(".posts");
+const template = document.querySelector("#post-template");
 
-// ===========================================================
-//                    DOM ELEMENTS
-// ===========================================================
+/* Modal */
+const modal = document.querySelector("#user-modal");
+const openModalBtn = document.querySelector("#open-user-modal");
+const closeModalBtn = document.querySelector(".close");
 
-const form = document.getElementById("postForm");
-const postContent = document.getElementById("postContent");
-const postImage = document.getElementById("postImage");
-const postsSection = document.querySelector(".posts");
-const postTemplate = document.getElementById("post-template");
+/* =========================================================
+   SHOW USER INFO IN MODAL
+   ========================================================= */
+openModalBtn.addEventListener("click", () => {
+    const info = currentUser.getInfo();
 
-const openUserModal = document.getElementById("open-user-modal");
-const modal = document.getElementById("user-modal");
-const closeModal = modal.querySelector(".close");
-
-// Modal fields
-const infoId = document.getElementById("info-id");
-const infoName = document.getElementById("info-name");
-const infoUsername = document.getElementById("info-username");
-const infoEmail = document.getElementById("info-email");
-const infoPages = document.getElementById("info-pages");
-const infoGroups = document.getElementById("info-groups");
-const infoMonetize = document.getElementById("info-monetize");
-
-
-
-// ===========================================================
-//                 FORM SUBMISSION HANDLER
-// ===========================================================
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const text = postContent.value.trim();
-    const file = postImage.files[0];
-
-    // REQUIRED: Cannot post empty message + no image
-    if (!text && !file) {
-        alert("Please write something or upload an image before posting.");
-        return;
-    }
-
-    createPost(text, file);
-
-    // reset form
-    postContent.value = "";
-    postImage.value = "";
-});
-
-
-
-// ===========================================================
-//                     CREATE A POST
-// ===========================================================
-
-function createPost(text, file) {
-
-    const clone = postTemplate.content.cloneNode(true);
-
-    // Fill name + date
-    clone.querySelector(".post-name").textContent = myUser.name;
-
-    clone.querySelector(".post-date").textContent =
-        new Date().toLocaleString("en-CA", {
-            dateStyle: "medium",
-            timeStyle: "short"
-        });
-
-    // Add text
-    clone.querySelector(".post-text").textContent = text;
-
-    // Add image if uploaded
-    if (file) {
-        const img = clone.querySelector(".post-image");
-        img.src = URL.createObjectURL(file);
-        img.style.display = "block";
-    }
-
-    postsSection.prepend(clone);
-}
-
-
-
-// ===========================================================
-//                       USER MODAL
-// ===========================================================
-
-// OPEN
-openUserModal.addEventListener("click", () => {
-    const data = myUser.getInfo();
-
-    infoId.textContent = `ID: ${data.id}`;
-    infoName.textContent = `Name: ${data.name}`;
-    infoUsername.textContent = `Username: ${data.username}`;
-    infoEmail.textContent = `Email: ${data.email}`;
-    infoPages.textContent = `Pages: ${data.pages.join(", ")}`;
-    infoGroups.textContent = `Groups: ${data.groups.join(", ")}`;
-    infoMonetize.textContent = `Monetization: ${data.monetization ? "Yes" : "No"}`;
+    document.querySelector("#info-id").textContent = `ID: ${info.id}`;
+    document.querySelector("#info-name").textContent = `Name: ${info.name}`;
+    document.querySelector("#info-username").textContent = `Username: ${info.userName}`;
+    document.querySelector("#info-email").textContent = `Email: ${info.email}`;
+    document.querySelector("#info-pages").textContent = `Pages: ${info.pages.join(", ")}`;
+    document.querySelector("#info-groups").textContent = `Groups: ${info.groups.join(", ")}`;
+    document.querySelector("#info-monetize").textContent = `Can Monetize: ${info.canMonetize}`;
 
     modal.style.display = "flex";
 });
 
-// CLOSE
-closeModal.addEventListener("click", () => {
+/* Close Modal */
+closeModalBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// Close when clicking outside modal
+/* Clicking outside closes modal */
 window.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
+});
+
+/* =========================================================
+   POST SUBMISSION
+   ========================================================= */
+postForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const text = postContent.value.trim();
+    const imageFile = postImageInput.files[0];
+
+    if (!text && !imageFile) {
+        alert("Please write something or select an image!");
+        return;
+    }
+
+    const clone = template.content.cloneNode(true);
+
+    /* User information */
+    clone.querySelector(".post-name").textContent = currentUser.name;
+
+    /* Date */
+    const date = new Date();
+    clone.querySelector(".post-date").textContent =
+        date.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
+
+    /* Post text */
+    clone.querySelector(".post-text").textContent = text;
+
+    /* Image handling */
+    if (imageFile) {
+        const imgTag = clone.querySelector(".post-image");
+        imgTag.style.display = "block";
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            imgTag.src = reader.result;
+        };
+        reader.readAsDataURL(imageFile);
+    }
+
+    /* Add the post */
+    postsContainer.prepend(clone);
+
+    /* Reset form */
+    postContent.value = "";
+    postImageInput.value = "";
 });

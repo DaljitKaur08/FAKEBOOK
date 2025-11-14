@@ -2,23 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Daljit Kaur">
-    <meta name="description" content="Fakebook Post System">
-    <meta name="keywords" content="html, css, javascript">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Daljit Kaur" />
+    <meta name="description" content="Fakebook Post System" />
 
     <title>Fakebook</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" />
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <link rel="stylesheet" href="./assets/index.css">
+    <link rel="stylesheet" href="./assets/index.css" />
 
     <script type="module" src="./assets/script/app.js" defer></script>
 </head>
@@ -36,7 +34,7 @@
                 <a href="#" id="open-user-modal">Account</a>
             </nav>
 
-            <img src="./assets/images/profile.png" alt="Profile" class="profile-icon">
+            <img src="./assets/images/profile.png" class="profile-icon" />
         </div>
     </header>
 
@@ -54,7 +52,7 @@
                             <i class="fa-solid fa-image"></i>
                         </label>
 
-                        <input type="file" id="postImage" accept="image/*">
+                        <input type="file" id="postImage" accept="image/*" />
 
                         <button type="submit" class="post-btn">Post</button>
                     </div>
@@ -65,7 +63,8 @@
             <template id="post-template">
                 <article class="post-card">
                     <div class="post-header">
-                        <img src="./assets/images/profile.png" class="post-user-img" alt="User Pic">
+                        <img src="./assets/images/profile.png" class="post-user-img" />
+
                         <div class="user-info">
                             <p class="post-name"></p>
                             <p class="post-date"></p>
@@ -73,7 +72,7 @@
                     </div>
 
                     <p class="post-text"></p>
-                    <img class="post-image" style="display:none;">
+                    <img class="post-image" style="display:none;" />
                 </article>
             </template>
 
@@ -84,10 +83,12 @@
 
     <div id="user-modal" class="modal">
         <div class="modal-content">
+
             <button class="close">&times;</button>
+
             <h2>User Information</h2>
 
-            <img src="./assets/images/profile.png" alt="User Image" class="modal-img">
+            <img src="./assets/images/profile.png" class="modal-img" />
 
             <p id="info-id"></p>
             <p id="info-name"></p>
@@ -96,9 +97,9 @@
             <p id="info-pages"></p>
             <p id="info-groups"></p>
             <p id="info-monetize"></p>
+
         </div>
     </div>
 
 </body>
-
 </html>

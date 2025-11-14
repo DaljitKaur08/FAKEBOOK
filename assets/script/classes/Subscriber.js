@@ -1,6 +1,11 @@
 "use strict";
 @import "./reset.css";
-class Subscriber extends User {
+"use strict";
+
+
+
+export default class Subscriber extends User {
+
     #pages;
     #groups;
     #canMonetize;
@@ -17,13 +22,11 @@ class Subscriber extends User {
     get canMonetize() { return this.#canMonetize; }
 
     getInfo() {
-        const baseInfo = super.getInfo();
-
-        return `${baseInfo}
+        return `
+${super.getInfo()}
 Pages: ${this.#pages.join(", ")}
 Groups: ${this.#groups.join(", ")}
-Monetization: ${this.#canMonetize}`;
+Can Monetize: ${this.#canMonetize}
+`;
     }
 }
-
-export default Subscriber;

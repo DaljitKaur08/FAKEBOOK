@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import "./reset.css";
 
-/* ================= GLOBAL ================= */
+
 body {
     background-color: #0f1117;
     font-family: "Nunito Sans", sans-serif;
@@ -21,7 +21,7 @@ button {
     cursor: pointer;
 }
 
-/* ================= HEADER ================= */
+
 header {
     background-color: #11131a;
     padding: 18px 0;

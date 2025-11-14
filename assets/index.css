@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import "./reset.css";
 
-
+/* GENERAL */
 body {
     background-color: #0f1117;
     font-family: "Nunito Sans", sans-serif;
@@ -13,15 +13,21 @@ body {
     margin-inline: auto;
 }
 
-.flex { display: flex; align-items: center; }
-.flex-between { justify-content: space-between; }
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
 
 button {
     border: none;
     cursor: pointer;
 }
 
-
+/* HEADER */
 header {
     background-color: #11131a;
     padding: 18px 0;
@@ -43,7 +49,6 @@ nav {
 nav a {
     text-decoration: none;
     color: #d5d5d5;
-    font-weight: 600;
 }
 
 nav a:hover {
@@ -56,7 +61,7 @@ nav a:hover {
     border-radius: 50%;
 }
 
-/* ================= POST FORM ================= */
+/* POST FORM */
 .post-form {
     margin-top: 40px;
     display: flex;
@@ -67,7 +72,7 @@ nav a:hover {
     background-color: #20232b;
     width: 820px;
     max-width: 100%;
-    padding: 24px 28px;
+    padding: 24px;
     border-radius: 10px;
 }
 
@@ -76,10 +81,10 @@ textarea {
     height: 180px;
     resize: none;
     padding: 14px;
-    color: white;
     background-color: #2b2f38;
     border: 1px solid #3a3f49;
     border-radius: 8px;
+    color: white;
 }
 
 .form-actions {
@@ -113,7 +118,7 @@ textarea {
     font-weight: 700;
 }
 
-/* ================= POSTS ================= */
+/* POSTS */
 .posts {
     margin-top: 30px;
     display: flex;
@@ -126,7 +131,7 @@ textarea {
     width: 100%;
     max-width: 700px;
     background-color: #20232b;
-    padding: 20px 22px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -148,7 +153,7 @@ textarea {
     margin-top: 12px;
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 .modal {
     position: fixed;
     inset: 0;
@@ -164,8 +169,8 @@ textarea {
     background-color: #20232b;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
     position: relative;
+    text-align: center;
 }
 
 .close {
@@ -181,113 +186,18 @@ textarea {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    margin: 10px auto;
 }
 
-
-
-
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    nav a {
-        font-size: 15px;
-    }
-
-    .post-form form {
-        width: 95%;
-        padding: 20px;
-    }
-
-    textarea {
-        height: 160px;
-    }
+    header h1 { font-size: 24px; }
 }
-
-
-@media (max-width: 768px) {
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .profile-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .post-form form {
-        padding: 18px;
-    }
-
-    textarea {
-        height: 150px;
-    }
-
-    .modal-content {
-        width: 85%;
-    }
-}
-
 
 @media (max-width: 600px) {
-
-    header h1 {
-        font-size: 22px;
-    }
-
-    .post-form form {
-        padding: 16px;
-    }
-
-    textarea {
-        height: 140px;
-        font-size: 15px;
-    }
-
-    .post-btn {
-        padding: 6px 14px;
-    }
-
-    .upload-label i {
-        font-size: 18px;
-    }
-
-    .post-card {
-        padding: 16px;
-    }
-
-    .modal-content {
-        padding: 16px;
-    }
+    textarea { height: 140px; }
+    .post-card { padding: 16px; }
 }
 
-
 @media (max-width: 420px) {
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-    textarea {
-        height: 120px;
-    }
-
-    .form-actions {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .post-card {
-        padding: 14px;
-    }
+    header h1 { font-size: 20px; }
 }

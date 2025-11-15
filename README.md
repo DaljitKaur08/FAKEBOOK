@@ -3,6 +3,8 @@
 This is a simple social network-like web page called Fakebook. Users can post text and images, and view user account information through a pop-up modal.
 ##  Live Demo  
 **View the App Here:** 
+ https://daljitkaur08.github.io/FAKEBOOK/
+ 
 
 ##  **Features**
 

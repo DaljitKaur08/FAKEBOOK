@@ -12,12 +12,12 @@ const modal = document.getElementById("user-modal");
 const closeBtn = document.querySelector(".close");
 const avatarBtn = document.getElementById("avatar-btn");
 
-// File name display
+
 const fileNameText = document.createElement("p");
 fileNameText.classList.add("file-detail");
 postImage.parentElement.insertAdjacentElement("afterend", fileNameText);
 
-// Modal info elements
+
 const infoId = document.getElementById("info-id");
 const infoName = document.getElementById("info-name");
 const infoUsername = document.getElementById("info-username");
@@ -26,22 +26,18 @@ const infoPages = document.getElementById("info-pages");
 const infoGroups = document.getElementById("info-groups");
 const infoMonetize = document.getElementById("info-monetize");
 
-// --------------------------
-// CREATE SUBSCRIBER OBJECT
-// --------------------------
+
 const subscriber = new Subscriber(
     192354,
     "Daljit Kaur",
-    "daljit_kaur",
+    "djsaini26",
     "saini26daljit@gmail.com",
     ["10"],
     ["Women in Tech"],
     true
 );
 
-// --------------------------
-// SHOW FILE NAME WHEN UPLOADED
-// --------------------------
+
 postImage.addEventListener("change", () => {
     if (postImage.files.length > 0) {
         fileNameText.textContent = postImage.files[0].name;
@@ -50,9 +46,7 @@ postImage.addEventListener("change", () => {
     }
 });
 
-// --------------------------
-// SHOW USER MODAL
-// --------------------------
+
 function openModal() {
     infoId.textContent = `ID: ${subscriber.id}`;
     infoName.textContent = `Name: ${subscriber.name}`;
@@ -75,9 +69,7 @@ window.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
 });
 
-// --------------------------
-// CREATE A POST
-// --------------------------
+
 postForm.addEventListener("submit", (e) => {
     e.preventDefault();
 

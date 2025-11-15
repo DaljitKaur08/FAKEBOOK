@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" >
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,17 +10,19 @@
 
     <link rel="icon" href="./assets/media/favicon.png" type="image/x-icon">
 
-    <!-- Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;900&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap"
+          rel="stylesheet">
 
-    <!-- Reset + Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+    
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Styles -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./assets/styles/index.css">
 
     <!-- JavaScript -->
@@ -41,7 +43,10 @@
                 <a href="#" id="open-user-modal">Account</a>
             </nav>
 
-            <img src="./assets/images/profile.png" id="avatar-btn" class="profile-icon" alt="User Profile">
+            <img src="./assets/images/profile.png"
+                 id="avatar-btn"
+                 class="profile-icon"
+                 alt="User Profile">
         </div>
     </header>
 
@@ -52,13 +57,17 @@
             <section class="post-form">
                 <form id="postForm">
                     <label for="postContent">Write something:</label>
-                    <textarea id="postContent" placeholder="What's new, Daljit?"></textarea>
+
+                    <textarea id="postContent"
+                              placeholder="What do you want to talk about ,Daljit?"></textarea>
 
                     <div class="form-actions">
                         <label for="postImage" class="upload-label">
                             <i class="fa-solid fa-image"></i>
                         </label>
+
                         <input type="file" id="postImage" accept="image/*" hidden>
+
                         <p id="fileName" class="file-detail"></p>
 
                         <button type="submit" class="post-btn">Post</button>
@@ -66,7 +75,7 @@
                 </form>
             </section>
 
-            <!-- POSTS APPEAR HERE -->
+            <!-- POSTS WILL APPEAR HERE -->
             <section class="posts"></section>
 
         </div>
@@ -78,6 +87,7 @@
             <button class="close">&times;</button>
 
             <h2>Your Account</h2>
+
             <img src="./assets/images/profile.png" class="modal-img">
 
             <p id="info-id"></p>

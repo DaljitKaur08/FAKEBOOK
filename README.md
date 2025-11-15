@@ -1,13 +1,29 @@
-# Fakebook App
+# **Fakebook – Social Media App**
 
-The Fakebook app is a mini social networking application that allows users to post messages, photos, or both. It also includes a modal that displays detailed user account information. This project demonstrates JavaScript classes, inheritance, private fields, DOM manipulation, ES modules, and dynamic UI updates.
+This is a simple social network-like web page called Fakebook. Users can post text and images, and view user account information through a pop-up modal.
+## **Live Demo**
+
+##  **Features**
+
+- **Create Posts** with text and/or images  
+- Prevents **empty posts**  
+- Each post displays **name, profile image, and date**  
+- **User Info Modal** showing account + subscriber details  
+- Uses **User & Subscriber classes** (private fields + getters)  
+- Fully **responsive** design  
+- ES6 **Modules + Clean Folder Structure**
+## 📸 **Screenshots**
+
+**Post Feed Example**  
+![Fakebook Feed](./assets/images/demo.png)
+
+**User Modal**  
+![Profile Modal](./assets/images/model.png)
+
+##  **Tech Stack**
+
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (ES6 Modules)**  
 
 ---
-
-## ✔ Features
-
-### 📝 Posting Functionality
-Users can create posts containing:
-- Text messages  
-- Photos  
-- Or a combination of both 

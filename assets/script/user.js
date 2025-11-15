@@ -1,7 +1,7 @@
+// User.js
 "use strict";
 
 export default class User {
-
     #id;
     #name;
     #userName;
@@ -20,11 +20,11 @@ export default class User {
     get email() { return this.#email; }
 
     getInfo() {
-        return `
-ID: ${this.#id}
-Name: ${this.#name}
-Username: ${this.#userName}
-Email: ${this.#email}
-`;
+        return {
+            id: this.#id,
+            name: this.#name,
+            userName: this.#userName,
+            email: this.#email
+        };
     }
 }

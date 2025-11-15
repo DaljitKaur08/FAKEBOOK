@@ -1,7 +1,14 @@
 @charset "utf-8";
-@import "./reset.css";
 
-/* GENERAL */
+/* ===============================
+    GLOBAL RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #0f1117;
     font-family: "Nunito Sans", sans-serif;
@@ -27,7 +34,9 @@ button {
     cursor: pointer;
 }
 
-/* HEADER */
+/* ===============================
+    HEADER
+================================ */
 header {
     background-color: #11131a;
     padding: 18px 0;
@@ -49,6 +58,7 @@ nav {
 nav a {
     text-decoration: none;
     color: #d5d5d5;
+    font-weight: 600;
 }
 
 nav a:hover {
@@ -59,9 +69,12 @@ nav a:hover {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
-/* POST FORM */
+/* ===============================
+    POST FORM
+================================ */
 .post-form {
     margin-top: 40px;
     display: flex;
@@ -72,8 +85,14 @@ nav a:hover {
     background-color: #20232b;
     width: 820px;
     max-width: 100%;
-    padding: 24px;
+    padding: 24px 28px;
     border-radius: 10px;
+}
+
+.post-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 textarea {
@@ -81,10 +100,15 @@ textarea {
     height: 180px;
     resize: none;
     padding: 14px;
+    color: white;
     background-color: #2b2f38;
     border: 1px solid #3a3f49;
     border-radius: 8px;
-    color: white;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: #aaaaaa;
 }
 
 .form-actions {
@@ -106,10 +130,6 @@ textarea {
     color: white;
 }
 
-#postImage {
-    display: none;
-}
-
 .post-btn {
     background-color: #1d6bff;
     color: white;
@@ -118,7 +138,13 @@ textarea {
     font-weight: 700;
 }
 
-/* POSTS */
+.post-btn:hover {
+    background-color: #0f57d4;
+}
+
+/* ===============================
+    POSTS
+================================ */
 .posts {
     margin-top: 30px;
     display: flex;
@@ -131,7 +157,7 @@ textarea {
     width: 100%;
     max-width: 700px;
     background-color: #20232b;
-    padding: 20px;
+    padding: 20px 22px;
     border-radius: 10px;
 }
 
@@ -139,6 +165,7 @@ textarea {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 10px;
 }
 
 .post-user-img {
@@ -147,21 +174,37 @@ textarea {
     border-radius: 50%;
 }
 
+.post-name {
+    font-weight: 700;
+}
+
+.post-date {
+    font-size: 13px;
+    color: #aaaaaa;
+}
+
+.post-text {
+    margin-top: 8px;
+}
+
 .post-image {
     width: 100%;
     border-radius: 8px;
     margin-top: 12px;
 }
 
-/* MODAL */
+/* ===============================
+    MODAL
+================================ */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    z-index: 99;
 }
 
 .modal-content {
@@ -169,8 +212,8 @@ textarea {
     background-color: #20232b;
     padding: 20px;
     border-radius: 10px;
-    position: relative;
     text-align: center;
+    position: relative;
 }
 
 .close {
@@ -186,18 +229,14 @@ textarea {
     width: 90px;
     height: 90px;
     border-radius: 50%;
+    margin: 10px auto;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    header h1 { font-size: 24px; }
-}
-
-@media (max-width: 600px) {
-    textarea { height: 140px; }
-    .post-card { padding: 16px; }
-}
-
-@media (max-width: 420px) {
-    header h1 { font-size: 20px; }
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 }

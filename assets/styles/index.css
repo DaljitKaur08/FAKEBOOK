@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-/* ===============================
-    GLOBAL RESET
-================================ */
 * {
     margin: 0;
     padding: 0;
@@ -34,9 +31,6 @@ button {
     cursor: pointer;
 }
 
-/* ===============================
-    HEADER
-================================ */
 header {
     background-color: #11131a;
     padding: 18px 0;
@@ -72,9 +66,6 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* ===============================
-    POST FORM
-================================ */
 .post-form {
     margin-top: 40px;
     display: flex;
@@ -142,9 +133,6 @@ textarea::placeholder {
     background-color: #0f57d4;
 }
 
-/* ===============================
-    POSTS
-================================ */
 .posts {
     margin-top: 30px;
     display: flex;
@@ -193,9 +181,6 @@ textarea::placeholder {
     margin-top: 12px;
 }
 
-/* ===============================
-    MODAL
-================================ */
 .modal {
     position: fixed;
     inset: 0;
@@ -232,7 +217,6 @@ textarea::placeholder {
     margin: 10px auto;
 }
 
-/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 768px) {
     nav {
         flex-wrap: wrap;

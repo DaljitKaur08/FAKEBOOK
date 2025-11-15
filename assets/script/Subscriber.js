@@ -1,4 +1,3 @@
-// Subscriber.js
 "use strict";
 
 import User from "./User.js";
@@ -15,18 +14,29 @@ export default class Subscriber extends User {
         this.#canMonetize = canMonetize;
     }
 
-    get pages() { return this.#pages; }
-    get groups() { return this.#groups; }
-    get canMonetize() { return this.#canMonetize; }
+    get pages() {
+        return this.#pages;
+    }
+
+    get groups() {
+        return this.#groups;
+    }
+
+    get canMonetize() {
+        return this.#canMonetize;
+    }
 
     getInfo() {
-        return {
-            ...super.getInfo(),
-            pages: this.#pages,
-            groups: this.#groups,
-            canMonetize: this.#canMonetize
-        };
+        const base = super.getInfo();
+
+        return `
+ID: ${base.id}
+Name: ${base.name}
+Username: ${base.userName}
+Email: ${base.email}
+Pages: ${this.#pages}
+Groups: ${this.#groups}
+Can Monetize: ${this.#canMonetize ? "Yes" : "No"}
+        `;
     }
 }
-
-

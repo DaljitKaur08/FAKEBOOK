@@ -1,7 +1,8 @@
 # **Fakebook – Social Media App**
 
 This is a simple social network-like web page called Fakebook. Users can post text and images, and view user account information through a pop-up modal.
-## **Live Demo**
+##  Live Demo  
+**View the App Here:** 
 
 ##  **Features**
 
@@ -18,6 +19,15 @@ This is a simple social network-like web page called Fakebook. Users can post te
 ![Fakebook Feed](./assets/images/demo.png)
 
 **User Modal**  
+Click the profile icon to open modal.  
+Displayed details include:
+- ID  
+- Full Name  
+- Username  
+- Email  
+- Pages (array)  
+- Groups (array)  
+- Monetization status 
 ![Profile Modal](./assets/images/model.png)
 
 ##  **Tech Stack**

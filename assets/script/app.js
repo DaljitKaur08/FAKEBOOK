@@ -2,7 +2,7 @@
 
 import Subscriber from "./Subscriber.js";
 
-/* Helper Functions */
+/*  Functions */
 function select(selector) {
     return document.querySelector(selector);
 }
@@ -46,7 +46,7 @@ const user = new Subscriber(
     true
 );
 
-/*  Functions  */
+
 
 /* Show uploaded file name */
 function showFileName() {

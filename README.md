@@ -19,8 +19,8 @@ This is a simple social network-like web page called Fakebook. Users can post te
 ![Fakebook Feed](./assets/images/demo.png)
 
 **User Modal**  
-Click the profile icon to open modal.  
-Displayed details include:
+              Click the profile icon to open modal.  
+              Displayed details include:
 - ID  
 - Full Name  
 - Username  

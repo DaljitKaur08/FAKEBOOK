@@ -1,0 +1,45 @@
+djsai@Daljit_Kaur MINGW64 ~/Downloads/fakebook (main)
+$ git log
+commit fe333e34d8a9fe6ccb98a98d862a11c91da56d21 (HEAD -> main, origin/main)
+Author: dj <saini26daljit@gmail.com>
+Date:   Fri Nov 14 23:34:51 2025 -0600
+
+    final
+
+commit 8eca953c081d5a90b5027671a97500a44d6b9eb1
+Author: dj <saini26daljit@gmail.com>
+Date:   Fri Nov 14 23:00:54 2025 -0600
+
+    save changes
+
+commit 92031a0824b92d145321f54d3c05e1ef05aa085f
+Author: dj <saini26daljit@gmail.com>
+Date:   Fri Nov 14 22:57:12 2025 -0600
+
+    save changes
+
+commit 7424b0747bd8c5ee4aa8483a66e66ba522d5763b
+Author: dj <saini26daljit@gmail.com>
+
+djsai@Daljit_Kaur MINGW64 ~/Downloads/fakebook (main)
+$ git log --oneline
+fe333e3 (HEAD -> main, origin/main) final
+8eca953 save changes
+92031a0 save changes
+7424b07 save js files
+76aa8c4 worked on html
+e41dc10 save readme
+8d45664 save details
+c0d67f4 save
+a7e65c9 Added README with features, instructions, and live demo link
+ed576fb working on readme file
+8fc8466 doing changes in readme.md
+ed2e394 working on ES modules
+bcdbf07 working on javascript
+7c6bfff updated Script
+d2d47d2 classes
+9a0282e js file updated
+ad5ef5d updated css
+97d602f CHANGES IN html
+25adeeb updated script folder
+fdce077 final changes in css
